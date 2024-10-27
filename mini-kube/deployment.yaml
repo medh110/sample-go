@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: samepl-go
+  namespace: production-cluster
+  labels:
+    app: samepl-go
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: samepl-go
+  template:
+    metadata:
+      labels:
+        app: samepl-go
+    spec:
+      containers:
+        - name: samepl-go
+          image: medhavisingh12/sample-go:latest
+          ports:
+            - containerPort: 8080
+          imagePullPolicy: Always
+          resources:
+            limits:
+              cpu: 100m
+              memory: 128Mi

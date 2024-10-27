@@ -9,6 +9,6 @@ RUN go build -o sample-go
 #deploy
 FROM alpine:latest
 WORKDIR /app
-COPY --from=builder /app/sample-go .
+COPY --from=build /app/sample-go .
 EXPOSE 8080
 CMD ["./sample-go"]
