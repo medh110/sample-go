@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   repository: medhavisingh12/sample-go
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   tag: latest
 
 imagePullSecrets: []
@@ -18,7 +18,7 @@ podSecurityContext: {}
 securityContext: {}
 
 service:
-  type: ClusterIP
+  type: NodePort
   port: 8080
 
 ingress:
