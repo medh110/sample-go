@@ -1,3 +1,2 @@
-module github.com/wemgl/simple-server
-
-go 1.12
+module github.com/medh110/sample-go
+go 1.23
